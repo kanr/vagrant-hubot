@@ -12,6 +12,9 @@ dpkg -s npm &>/dev/null ||{
   ln -s /usr/bin/nodejs /usr/bin/node
 }
 
-#
-
-#
+#check if hubot is instaled, if yes: return 0
+# else
+#    install hubot and coffee-script
+command -v hubot &>/dev/null ||{
+  npm install -g hubot coffee-script
+}
